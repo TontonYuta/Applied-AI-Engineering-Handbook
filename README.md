@@ -12,6 +12,60 @@
 
 ---
 
+## 🎨 AI ENG STUDIO — PHÒNG LAB TRỰC QUAN TƯƠNG TÁC (VIBECODED)
+
+> **"AI Eng Studio"** là ứng dụng web học tập trực quan cao cấp, được kiến tạo tự động 100% bằng [`auto-vibecoder`](https://github.com/TontonYuta/auto-vibecoder) trên nền tảng **Google AI Studio App Builder**. Thiết kế tuân thủ tiêu chuẩn giao diện tối giản tối cao (Dark Minimalist phong cách Linear/Raycast/Vercel) với 5 phòng lab thực chiến:
+
+### 1. 🔍 RAG & 2D Vector Space Explorer + RRF Fusion
+* **Slider Chunk Size (50-500) & Overlap (0-100)**: Chia đoạn tài liệu trực tiếp, tô màu phân đoạn và làm nổi bật overlap gối đầu.
+* **Canvas 2D Scatter Plot 60fps**: Chiếu không gian nhúng vector, bắn tia đo Cosine Similarity từ Query Point tới Top-K chunks gần nhất.
+* **Reciprocal Rank Fusion (RRF)**: Dung hợp đa tầng Sparse BM25 + Dense Vector Embeddings với công thức $RRF(d) = \sum \frac{1}{k + rank_i}$ ($k=60$).
+
+![RAG 2D Canvas](docs/images/01_rag_vector_2d.png)
+![RRF Hybrid Search](docs/images/01_rag_rrf_fusion.png)
+
+---
+
+### 2. 🕸️ LangGraph Agentic Flowchart Simulator + Cổng Human-In-The-Loop
+* **StateGraph Canvas**: Mô phỏng trực quan luồng xử lý `Customer Request -> Planner -> SQL Sandbox -> Human Gate -> Disbursement`.
+* **Data Orb Animation**: Gói dữ liệu chuyển động phát sáng mượt mà dọc theo các nhánh có điều kiện.
+* **Breakpoint An Toàn `state.interrupt()`**: Với các giao dịch vượt ngưỡng (ví dụ: hoàn 25.000.000 VNĐ > 5.000.000 VNĐ), hệ thống tự động ngắt và kích hoạt popup phê duyệt của Quản lý trước khi giải ngân.
+
+![LangGraph HITL Breakpoint](docs/images/02_langgraph_hitl_breakpoint.png)
+![LangGraph Completed Path](docs/images/02_langgraph_completed.png)
+
+---
+
+### 3. ⚡ Semantic Cache & FinOps Latency Waterfall
+* **Ngưỡng tương đồng $\tau$ (0.70 - 0.98)**: Phân biệt Paraphrase Query để quyết định Cache Hit vs Cache Miss.
+* **Waterfall Latency Benchmark**: Trực quan hóa độ trễ $880\text{ ms}$ (LLM Cloud Roundtrip) so với $14\text{ ms}$ (Redis Vector Cache Hit) — **nhanh hơn 98.4%**.
+* **Đồng hồ đo FinOps**: Tính toán chi phí tiết kiệm trực tiếp theo bảng giá GPT-4o, Claude 3.5 Sonnet và Gemini Flash.
+
+![Semantic Cache](docs/images/03_semantic_cache_cost.png)
+
+---
+
+### 4. 🛡️ AI Security Guardrails & Injection Firewall Sandbox
+* **Red Team Presets**: Nạp sẵn các mẫu tấn công: DAN Jailbreak v9.2, Prompt Leak & Canary Extraction, PII Exfiltration, Indirect Markdown Injection.
+* **Tường lửa 4 tầng**: Heuristic Regex, Secret Canary Token Trap, PII Masking & Redactor, Jailbreak Classifier.
+* **Token Risk Inspector**: Đánh dấu trực quan các token nguy hiểm trong câu lệnh và chặn trả lời (HTTP 403 Forbidden).
+
+![AI Security Firewall](docs/images/04_ai_security_firewall.png)
+
+---
+
+### 5. 🧩 Self-Healing JSON AST Engine
+* **Phục hồi AST trong $0.4\text{ ms}$**: Tự động vá các lỗi phổ biến của LLM mà không cần tốn chi phí và thời gian gọi lại model ($1,850\text{ ms}$):
+  1. Loại bỏ Markdown fences (````json```) và văn bản đàm thoại thừa.
+  2. Chuẩn hóa Python Literals (`True`/`False`/`None` sang `true`/`false`/`null`).
+  3. Xóa trailing commas thừa trước dấu đóng `}` hoặc `]`.
+  4. Bổ sung ngoặc kép cho Object Keys chưa có ngoặc.
+  5. Cân bằng ngoặc đóng bị đứt nửa chừng do token limit.
+
+![Self-Healing JSON Lab](docs/images/05_self_healing_json.png)
+
+---
+
 ## 💻 3 CÁCH HỌC TRỰC TIẾP TRÊN GITHUB (KHÔNG CẦN CÀI ĐẶT MÁY TÍNH)
 
 ```mermaid

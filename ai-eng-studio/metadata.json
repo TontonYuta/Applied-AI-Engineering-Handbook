@@ -1,0 +1,7 @@
+{
+  "name": "AI Eng Studio - The Applied AI Visual Lab",
+  "description": "Interactive visual laboratory for applied AI engineers: 2D RAG Vector space & chunking, LangGraph simulator, semantic caching, AI security firewall, and self-healing JSON.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
