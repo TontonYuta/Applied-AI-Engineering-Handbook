@@ -1,0 +1,108 @@
+# 🚀 CẨM NANG KỸ SƯ AI THỰC CHIẾN (APPLIED AI ENGINEERING HANDBOOK)
+### Nền Tảng Học Tập & Tham Chiếu Dự Án AI Ứng Dụng Hàng Đầu
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=TontonYuta/Applied-AI-Engineering-Handbook)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TontonYuta/Applied-AI-Engineering-Handbook/blob/main/notebooks/01_interactive_rag_cookbook.ipynb)
+[![CI Evals](https://img.shields.io/badge/CI%20Evals-100%25%20Passing-brightgreen.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-orange.svg)]()
+
+> **Chào mừng bạn đến với Cẩm Nang Kỹ Sư AI Thực Chiến!**  
+> Kho lưu trữ này được thiết kế để bạn có thể **học tập, chạy thử code và thực hành trực tiếp 100% ngay trên GitHub hoặc Google Colab mà không cần cài đặt bất kỳ phần mềm nào trên máy tính cá nhân**.
+
+---
+
+## 💻 3 CÁCH HỌC TRỰC TIẾP TRÊN GITHUB (KHÔNG CẦN CÀI ĐẶT MÁY TÍNH)
+
+```mermaid
+flowchart LR
+    A["Kho Tri Thức GitHub"] --> B["Cách 1: GitHub Codespaces<br/>(1-Click mở full VS Code + Linux trên Web)"]
+    A --> C["Cách 2: Google Colab Badges<br/>(1-Click mở Jupyter Notebook có GPU)"]
+    A --> D["Cách 3: Đọc Web / Mobile<br/>(Markdown chuẩn mực + Sơ đồ Mermaid)"]
+```
+
+### 1. Cách 1: Chạy toàn bộ kho code bằng GitHub Codespaces (Khuyên dùng)
+* Nhấn vào nút: [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=TontonYuta/Applied-AI-Engineering-Handbook)
+* GitHub sẽ tự động tạo một máy ảo Linux đám mây với **VS Code trên trình duyệt**, đã cài sẵn Python 3.11, Jupyter Notebooks và toàn bộ thư viện trong `requirements.txt` qua cấu hình [`.devcontainer/devcontainer.json`](.devcontainer/devcontainer.json).
+* Miễn phí **60 giờ sử dụng mỗi tháng** cho mọi tài khoản GitHub.
+
+### 2. Cách 2: Thực hành từng bài lab trên Google Colab
+* Mở thư mục [`notebooks/`](notebooks/) và nhấn vào nút **Open In Colab** ở đầu mỗi notebook để chạy code tương tác và thử nghiệm miễn phí với GPU của Google.
+
+### 3. Cách 3: Đọc trực tiếp trên ứng dụng GitHub (Web & Mobile)
+* Toàn bộ tài liệu được viết theo chuẩn GitHub Flavored Markdown với sơ đồ luồng dữ liệu Mermaid trực quan, công thức toán học và bảng biểu so sánh rõ ràng.
+
+---
+
+## 📑 BỘ 12 PAPERS KINH ĐIỂN CỦA KỸ SƯ AI THỰC CHIẾN
+
+*Chi tiết phân tích kiến trúc và bài học thực tế xem tại thư mục [`papers/`](papers/):*
+
+| Nhóm Chuyên Đề | Tên Paper | Tác Giả & Tổ Chức | Giá Trị Thực Chiến Cốt Lõi | Chi Tiết |
+| :--- | :--- | :--- | :--- | :---: |
+| **RAG Nâng Cao** | **RAG** | Patrick Lewis et al. *(Meta AI)* | Khai sinh kiến trúc RAG; LLM là Reasoning Engine, Vector DB là Hard Drive. | [Xem](papers/01_rag_retrieval_papers.md#1-rag) |
+| | **Self-RAG** | Akari Asai et al. *(UW / AI2)* | Token tự phản biện (`[Retrieve]`, `[IsRel]`, `[IsSup]`) chống ảo giác. | [Xem](papers/01_rag_retrieval_papers.md#2-self-rag) |
+| | **CRAG** | Shi-Qi Yan et al. *(2024)* | Cơ chế tự sửa sai; fallback sang Web Search khi Vector DB không khớp. | [Xem](papers/01_rag_retrieval_papers.md#3-corrective-rag-crag) |
+| | **ColBERT / ColPali** | Khattab et al. / Faysse et al. | Late Interaction (MaxSim); tìm kiếm PDF/bảng biểu thị giác không cần OCR. | [Xem](papers/01_rag_retrieval_papers.md#4-colbert--colpali) |
+| | **GraphRAG** | Darren Edge et al. *(Microsoft)* | Gom cụm cộng đồng Leiden; trả lời câu hỏi tổng hợp vĩ mô toàn tập dữ liệu. | [Xem](papers/01_rag_retrieval_papers.md#5-graphrag) |
+| **Agents & Tools** | **ReAct** | Shunyu Yao et al. *(Princeton / Google)* | Công thức vàng: `Thought -> Action -> Observation`. | [Xem](papers/02_agentic_workflows_papers.md#1-react) |
+| | **Reflexion** | Noah Shinn et al. *(MIT / Northeastern)* | Vòng lặp rút kinh nghiệm bằng ngôn ngữ (Verbal RL) khi gặp lỗi. | [Xem](papers/02_agentic_workflows_papers.md#2-reflexion) |
+| | **Toolformer** | Timo Schick et al. *(Meta AI)* | Cơ chế mô hình tự quyết định thời điểm và tham số gọi API ngoại vi. | [Xem](papers/02_agentic_workflows_papers.md#3-toolformer) |
+| | **Effective Agents** | Erik Schluntz *(Anthropic, Dec 2024)* | 5 mẫu thiết kế quy trình: Chaining, Routing, Parallel, Orchestrator, Optimizer. | [Xem](papers/02_agentic_workflows_papers.md#4-anthropic-agents) |
+| **Evals & Serving**| **LLM-as-a-Judge** | Lianmin Zheng et al. *(LMSYS / Berkeley)* | Đánh giá tự động; khắc phục 4 thiên kiến (Position, Verbosity, Self-bias). | [Xem](papers/03_evals_and_serving_papers.md#1-llm-as-a-judge) |
+| | **LoRA & QLoRA** | Edward Hu / Tim Dettmers | Đóng băng trọng số gốc, tinh chỉnh ma trận phân rã $B \cdot A$ trên 4-bit NF4. | [Xem](papers/03_evals_and_serving_papers.md#2-lora--qlora) |
+| | **vLLM PagedAttention**| Woosuk Kwon et al. *(UC Berkeley)* | Phân trang bộ nhớ ảo KV Cache, tăng thông lượng serving lên $24\times$. | [Xem](papers/03_evals_and_serving_papers.md#3-vllm-pagedattention) |
+
+---
+
+## 🛠️ TOP 15 GITHUB REPOSITORIES THỰC CHIẾN HÀNG ĐẦU THẾ GIỚI
+
+### 1. Tuyển tập Thực hành & Cookbooks
+* [**NirDiamant/RAG_Techniques**](https://github.com/NirDiamant/RAG_Techniques) — Kho mẫu RAG thực chiến số 1: Chunking, Hybrid, Reranking, CRAG.
+* [**NirDiamant/GenAI_Agents**](https://github.com/NirDiamant/GenAI_Agents) — Tuyển tập hàng chục notebook triển khai các mẫu thiết kế Agent.
+* [**anthropics/anthropic-cookbook**](https://github.com/anthropics/anthropic-cookbook) — Code mẫu chính thức từ Anthropic (Tool calling, Caching, Vision).
+* [**openai/openai-cookbook**](https://github.com/openai/openai-cookbook) — Cẩm nang doanh nghiệp từ OpenAI (Structured Outputs, Evals).
+* [**meta-llama/llama-cookbook**](https://github.com/meta-llama/llama-cookbook) — Cẩm nang tối ưu và chạy mô hình mã nguồn mở Llama.
+
+### 2. Giao thức Mở & Khung Tác Tử (Agents & Protocols)
+* [**modelcontextprotocol/servers**](https://github.com/modelcontextprotocol/servers) — Chuẩn mở MCP: Kết nối AI với Postgres, SQLite, Slack, Git.
+* [**langchain-ai/langgraph**](https://github.com/langchain-ai/langgraph) — Nền tảng điều phối Agent có trạng thái và điểm ngắt Human-in-the-loop.
+* [**pydantic/pydantic-ai**](https://github.com/pydantic/pydantic-ai) — Khung Agent hiện đại, hướng type-safe từ đội ngũ Pydantic.
+* [**jxnl/instructor**](https://github.com/jxnl/instructor) — Chuẩn hóa trích xuất dữ liệu có cấu trúc với Pydantic V2.
+
+### 3. Đánh giá Tự động (Evals) & Giám sát (LLMOps)
+* [**confident-ai/deepeval**](https://github.com/confident-ai/deepeval) — Bộ kiểm thử Unit Test cho LLM trong CI/CD.
+* [**explodinggradients/ragas**](https://github.com/explodinggradients/ragas) — Khung đo lường độ trung thực (Faithfulness) và độ liên quan của RAG.
+* [**langfuse/langfuse**](https://github.com/langfuse/langfuse) — Nền tảng mã nguồn mở số 1 về Tracing, Token, Latency và Cost tracking.
+* [**Arize-ai/phoenix**](https://github.com/Arize-ai/phoenix) — AI Observability và trực quan hóa trace phân tán.
+
+### 4. Cụm Phục Vụ & Fine-Tuning
+* [**vllm-project/vllm**](https://github.com/vllm-project/vllm) — Cụm serving suy luận tốc độ cao nhất hiện nay.
+* [**unslothai/unsloth**](https://github.com/unslothai/unsloth) — Huấn luyện LoRA/QLoRA siêu tốc, tiết kiệm 80% VRAM GPU.
+
+---
+
+## 🧭 CẤU TRÚC THƯ MỤC KHO LƯU TRỮ
+
+```text
+Applied-AI-Engineering-Handbook/
+├── .devcontainer/                  # Cấu hình 1-Click mở trên GitHub Codespaces
+│   └── devcontainer.json
+├── .github/workflows/              # Tự động hóa CI/CD Evals trên GitHub
+│   └── ci.yml
+├── papers/                         # Bản phân tích & Đúc kết 12 Papers kinh điển
+│   ├── 01_rag_retrieval_papers.md
+│   ├── 02_agentic_workflows_papers.md
+│   └── 03_evals_and_serving_papers.md
+├── notebooks/                      # Các bài lab tương tác chạy trên Google Colab
+│   └── 01_interactive_rag_cookbook.ipynb
+├── tests/                          # Bộ kiểm thử tự động xác minh môi trường
+│   └── test_handbook_smoke.py
+├── requirements.txt                # Thư viện Python cần thiết
+└── .env.example                    # Mẫu cấu hình API keys
+```
+
+---
+
+## ⚖️ Giấy Phép & Đóng Góp
+Kho tài liệu được phát hành theo giấy phép **MIT License**. Mọi đóng góp (Pull Requests) bổ sung paper mới, repo mới hoặc notebook thực hành đều được hoan nghênh nồng nhiệt!
