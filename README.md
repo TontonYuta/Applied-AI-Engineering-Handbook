@@ -12,9 +12,48 @@
 
 ---
 
-## 🎨 AI ENG STUDIO — PHÒNG LAB TRỰC QUAN TƯƠNG TÁC (VIBECODED)
+## 🎓 AI ENG ACADEMY — HỌC TỪ NHỎ ĐẾN LỚN + QUIZ TƯƠNG TÁC (SIÊU CLEAN)
 
-> **"AI Eng Studio"** là ứng dụng web học tập trực quan cao cấp, được kiến tạo tự động 100% bằng [`auto-vibecoder`](https://github.com/TontonYuta/auto-vibecoder) trên nền tảng **Google AI Studio App Builder**. Thiết kế tuân thủ tiêu chuẩn giao diện tối giản tối cao (Dark Minimalist phong cách Linear/Raycast/Vercel) với 5 phòng lab thực chiến:
+> **"AI Eng Academy"** là phiên bản cải tiến tối thượng, loại bỏ hoàn toàn các nút bấm phức tạp. Người học được dẫn dắt theo **lộ trình 8 bài học nguyên tử từ số 0**, kiến thức nâng dần lên để không bị ngợp, đi kèm **thử thách trắc nghiệm (Interactive Quiz) phản hồi thời gian thực**.
+
+```mermaid
+flowchart LR
+    L1["Bài 1: Token là gì?"] --> L2["Bài 2: Embedding & Vector"]
+    L2 --> L3["Bài 3: Chunking & Overlap"]
+    L3 --> L4["Bài 4: RAG Cơ Chế"]
+    L4 --> L5["Bài 5: ReAct Agent"]
+    L5 --> L6["Bài 6: Human-in-the-Loop"]
+    L6 --> L7["Bài 7: AI Security & Guardrails"]
+    L7 --> L8["Bài 8: Self-Healing JSON"]
+```
+
+### 1. Trải nghiệm học tối giản (Zero Cognitive Load)
+* **Giao diện tập trung tuyệt đối**: Chỉ có 1 thẻ bài học cô đọng + 1 minh họa trực quan 60fps + 1 thẻ Quiz 4 lựa chọn (A, B, C, D).
+* **Phản hồi tức thì**: Chọn đúng hiện thẻ xanh lá `CHÍNH XÁC! (+1 ⭐ KỸ NĂNG THỰC CHIẾN)` kèm lời giải thích tại sao đúng trong thực tế sản xuất.
+
+| Bài 1: Tokenizer Trực Quan + Quiz Câu Hỏi | Bài 1: Phản Hồi Xanh Lá Khi Chọn Đúng |
+| :---: | :---: |
+| ![Lesson 1 Question](docs/images/lesson_01_token_question.png) | ![Lesson 1 Answered](docs/images/lesson_01_token_answered.png) |
+
+| Bài 2: Embedding 2D & Khoảng Cách Cosine | Bài 3: Chunking & Vùng Gối Đầu Overlap |
+| :---: | :---: |
+| ![Lesson 2 Embedding](docs/images/lesson_02_embedding.png) | ![Lesson 3 Chunking](docs/images/lesson_03_chunking.png) |
+
+| Bài 4: Quy Trình RAG 3 Bước | Bài 5: Chu Trình ReAct Agent |
+| :---: | :---: |
+| ![Lesson 4 RAG](docs/images/lesson_04_rag.png) | ![Lesson 5 Agent](docs/images/lesson_05_agent.png) |
+
+| Bài 6: Breakpoint Phê Duyệt An Toàn | Bài 7: AI Firewall & Canary Token |
+| :---: | :---: |
+| ![Lesson 6 HITL](docs/images/lesson_06_hitl.png) | ![Lesson 7 Security](docs/images/lesson_07_security.png) |
+
+| Bài 8: Tự Vá Lỗi AST JSON trong 0.4ms | Bài 8: Hoàn Tất Khóa Học & Điểm Thưởng |
+| :---: | :---: |
+| ![Lesson 8 JSON](docs/images/lesson_08_json.png) | ![Lesson 8 Answered](docs/images/lesson_08_answered.png) |
+
+---
+
+## 🎨 PHÒNG LAB TỔNG HỢP VÀ THỰC HÀNH CHUYÊN SÂU (ADVANCED LABS)
 
 ### 1. 🔍 RAG & 2D Vector Space Explorer + RRF Fusion
 * **Slider Chunk Size (50-500) & Overlap (0-100)**: Chia đoạn tài liệu trực tiếp, tô màu phân đoạn và làm nổi bật overlap gối đầu.
