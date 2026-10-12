@@ -2,10 +2,12 @@
 ### Nền Tảng Học Tập & Tham Chiếu Dự Án AI Ứng Dụng Hàng Đầu
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=TontonYuta/Applied-AI-Engineering-Handbook)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TontonYuta/Applied-AI-Engineering-Handbook/blob/main/notebooks/01_interactive_rag_cookbook.ipynb)
-[![CI Evals](https://img.shields.io/badge/CI%20Evals-100%25%20Passing-brightgreen.svg)]()
+[![Colab Lab 1: Hybrid RAG](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TontonYuta/Applied-AI-Engineering-Handbook/blob/main/notebooks/01_interactive_rag_cookbook.ipynb)
+[![Colab Lab 2: ReAct HITL](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TontonYuta/Applied-AI-Engineering-Handbook/blob/main/notebooks/02_agentic_langgraph_hitl.ipynb)
+[![Colab Lab 3: Cache & Firewall](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TontonYuta/Applied-AI-Engineering-Handbook/blob/main/notebooks/03_semantic_cache_and_guardrails.ipynb)
+[![Colab Lab 4: Self-Healing JSON](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/TontonYuta/Applied-AI-Engineering-Handbook/blob/main/notebooks/04_self_healing_structured_outputs.ipynb)
+[![CI Evals](https://img.shields.io/badge/CI%20Evals-20%2F20%20Passing-brightgreen.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)]()
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-orange.svg)]()
 
 > **Chào mừng bạn đến với Cẩm Nang Kỹ Sư AI Thực Chiến!**  
 > Kho lưu trữ này được thiết kế để bạn có thể **học tập, chạy thử code và thực hành trực tiếp 100% ngay trên GitHub hoặc Google Colab mà không cần cài đặt bất kỳ phần mềm nào trên máy tính cá nhân**.
@@ -105,13 +107,29 @@ flowchart LR
 
 ---
 
-## 💻 3 CÁCH HỌC TRỰC TIẾP TRÊN GITHUB (KHÔNG CẦN CÀI ĐẶT MÁY TÍNH)
+## 🏛️ 6 MẪU THIẾT KẾ HỆ THỐNG AI THỰC CHIẾN (CANONICAL DESIGN PATTERNS)
+
+> Toàn bộ các mẫu thiết kế đều đi kèm mã nguồn Python chuẩn mực, độc lập phụ thuộc và có **100% bộ kiểm thử tự động `pytest`** xác minh trong CI/CD. Chi tiết xem tại thư mục [`patterns/`](patterns/):
+
+| STT | Mẫu Thiết Kế (Pattern) | Vấn Đề Giải Quyết | Công Nghệ Cốt Lõi | Mã Nguồn Mẫu |
+| :---: | :--- | :--- | :--- | :---: |
+| **01** | [**Structured Outputs & Self-Healing JSON**](patterns/01_structured_output_and_self_healing/) | LLM trả lời tùy ý, vỡ schema khi tích hợp backend microservices. | Pydantic V2, AST Parser, Zero-latency Regex Healing | [Xem Code](patterns/01_structured_output_and_self_healing/) |
+| **02** | [**Hybrid Search & Reciprocal Rank Fusion (RRF)**](patterns/02_hybrid_search_and_reranking_rrf/) | Vector Search thuần túy bị trượt từ khóa chính xác (mã lỗi, serial, acronyms). | BM25 Okapi, Cosine Distance, RRF ($k=60$) | [Xem Code](patterns/02_hybrid_search_and_reranking_rrf/) |
+| **03** | [**Agentic ReAct & Dynamic Routing**](patterns/03_agentic_react_and_routing/) | Mô hình không thể truy xuất API động, dễ lặp vô tận khi gọi công cụ. | ReAct Loop, Scratchpad Reasoning, Tool Sandboxing | [Xem Code](patterns/03_agentic_react_and_routing/) |
+| **04** | [**Human-in-the-Loop & Breakpoints**](patterns/04_human_in_the_loop_guardrails/) | Rủi ro thất thoát tài chính hoặc rò rỉ dữ liệu khi AI tự hành ra quyết định lớn. | `state.interrupt()`, Approval Gates, Audit Trail | [Xem Code](patterns/04_human_in_the_loop_guardrails/) |
+| **05** | [**Semantic Caching & FinOps Latency Waterfall**](patterns/05_semantic_caching_and_finops/) | Độ trễ gọi LLM cao (~1s), lãng phí chi phí token khi người dùng hỏi các câu tương đồng. | Vector Cosine Threshold, TTL Eviction, FinOps Tracker | [Xem Code](patterns/05_semantic_caching_and_finops/) |
+| **06** | [**AI Security Guardrails & Injection Defense**](patterns/06_ai_firewall_and_injection_defense/) | Bị tấn công Jailbreak (DAN), Prompt Injection, đánh cắp Canary Token, lộ PII. | Canary Trap, PII Redaction, Layered Defense Firewall | [Xem Code](patterns/06_ai_firewall_and_injection_defense/) |
+
+---
+
+## 💻 4 CÁCH HỌC & TRẢI NGHIỆM TRỰC TIẾP (KHÔNG CẦN CÀI ĐẶT MÁY TÍNH)
 
 ```mermaid
 flowchart LR
     A["Kho Tri Thức GitHub"] --> B["Cách 1: GitHub Codespaces<br/>(1-Click mở full VS Code + Linux trên Web)"]
-    A --> C["Cách 2: Google Colab Badges<br/>(1-Click mở Jupyter Notebook có GPU)"]
-    A --> D["Cách 3: Đọc Web / Mobile<br/>(Markdown chuẩn mực + Sơ đồ Mermaid)"]
+    A --> C["Cách 2: Google Colab Badges<br/>(1-Click mở 4 Jupyter Notebooks có GPU)"]
+    A --> D["Cách 3: AI Eng Studio Web App<br/>(Mở studio-app/index.html tương tác 60fps)"]
+    A --> E["Cách 4: Đọc Web / Mobile<br/>(Markdown chuẩn mực + Sơ đồ Mermaid)"]
 ```
 
 ### 1. Cách 1: Chạy toàn bộ kho code bằng GitHub Codespaces (Khuyên dùng)
@@ -119,10 +137,19 @@ flowchart LR
 * GitHub sẽ tự động tạo một máy ảo Linux đám mây với **VS Code trên trình duyệt**, đã cài sẵn Python 3.11, Jupyter Notebooks và toàn bộ thư viện trong `requirements.txt` qua cấu hình [`.devcontainer/devcontainer.json`](.devcontainer/devcontainer.json).
 * Miễn phí **60 giờ sử dụng mỗi tháng** cho mọi tài khoản GitHub.
 
-### 2. Cách 2: Thực hành từng bài lab trên Google Colab
-* Mở thư mục [`notebooks/`](notebooks/) và nhấn vào nút **Open In Colab** ở đầu mỗi notebook để chạy code tương tác và thử nghiệm miễn phí với GPU của Google.
+### 2. Cách 2: Thực hành 4 bài lab trên Google Colab
+* Mở thư mục [`notebooks/`](notebooks/) và nhấn vào nút **Open In Colab** ở đầu mỗi notebook để chạy code tương tác và thử nghiệm miễn phí với GPU của Google:
+  - [`01_interactive_rag_cookbook.ipynb`](notebooks/01_interactive_rag_cookbook.ipynb): BM25 + Vector Search + RRF Fusion.
+  - [`02_agentic_langgraph_hitl.ipynb`](notebooks/02_agentic_langgraph_hitl.ipynb): ReAct Loop & Breakpoint Cổng Quản Lý Duyệt.
+  - [`03_semantic_cache_and_guardrails.ipynb`](notebooks/03_semantic_cache_and_guardrails.ipynb): Semantic Cache FinOps & Tường Lửa Canary Token.
+  - [`04_self_healing_structured_outputs.ipynb`](notebooks/04_self_healing_structured_outputs.ipynb): Pydantic V2 & Tự Vá Lỗi AST JSON trong 0.4ms.
 
-### 3. Cách 3: Đọc trực tiếp trên ứng dụng GitHub (Web & Mobile)
+### 3. Cách 3: Chạy AI Eng Studio Web App trực tiếp trên trình duyệt
+* Mở file [`studio-app/index.html`](studio-app/index.html) bằng bất kỳ trình duyệt nào (hoặc chạy lệnh `python3 -m http.server 8000` trong terminal) để trải nghiệm giao diện trực quan 60fps đầy đủ cả 2 chế độ:
+  - **AI Eng Academy**: 8 bài học tuần tự từ số 0 kèm bộ Quiz trắc nghiệm tương tác chấm điểm thời gian thực.
+  - **Advanced Labs**: 5 phòng lab mô phỏng đồ thị LangGraph, không gian vector 2D, thác nước độ trễ Semantic Cache, và Red Team Firewall.
+
+### 4. Cách 4: Đọc trực tiếp trên ứng dụng GitHub (Web & Mobile)
 * Toàn bộ tài liệu được viết theo chuẩn GitHub Flavored Markdown với sơ đồ luồng dữ liệu Mermaid trực quan, công thức toán học và bảng biểu so sánh rõ ràng.
 
 ---
@@ -181,15 +208,28 @@ flowchart LR
 Applied-AI-Engineering-Handbook/
 ├── .devcontainer/                  # Cấu hình 1-Click mở trên GitHub Codespaces
 │   └── devcontainer.json
-├── .github/workflows/              # Tự động hóa CI/CD Evals trên GitHub
+├── .github/workflows/              # Tự động hóa CI/CD Evals (20/20 Passing Tests)
 │   └── ci.yml
+├── patterns/                       # 6 Mẫu Thiết Kế Hệ Thống AI Thực Chiến
+│   ├── README.md                   # Tổng hợp kiến trúc & hướng dẫn sử dụng
+│   ├── 01_structured_output_and_self_healing/
+│   ├── 02_hybrid_search_and_reranking_rrf/
+│   ├── 03_agentic_react_and_routing/
+│   ├── 04_human_in_the_loop_guardrails/
+│   ├── 05_semantic_caching_and_finops/
+│   └── 06_ai_firewall_and_injection_defense/
+├── notebooks/                      # 4 Bài Lab tương tác chạy trên Google Colab
+│   ├── 01_interactive_rag_cookbook.ipynb
+│   ├── 02_agentic_langgraph_hitl.ipynb
+│   ├── 03_semantic_cache_and_guardrails.ipynb
+│   └── 04_self_healing_structured_outputs.ipynb
+├── studio-app/                     # Ứng dụng Web Tương Tác Trực Quan Độc Lập
+│   └── index.html                  # Giao diện Academy 8 bài + 5 Advanced Labs
 ├── papers/                         # Bản phân tích & Đúc kết 12 Papers kinh điển
 │   ├── 01_rag_retrieval_papers.md
 │   ├── 02_agentic_workflows_papers.md
 │   └── 03_evals_and_serving_papers.md
-├── notebooks/                      # Các bài lab tương tác chạy trên Google Colab
-│   └── 01_interactive_rag_cookbook.ipynb
-├── tests/                          # Bộ kiểm thử tự động xác minh môi trường
+├── tests/                          # Bộ kiểm thử tự động xác minh môi trường & code
 │   └── test_handbook_smoke.py
 ├── requirements.txt                # Thư viện Python cần thiết
 └── .env.example                    # Mẫu cấu hình API keys
